@@ -50,7 +50,7 @@
             </li>
             <li class="nav-item">
               <a
-                href="http://localhost/Website-TEDITAS/"
+                href="/cam"
                 class="nav-link contact"
                 >Mulai</a
               >
@@ -76,7 +76,7 @@
               </h1>
 
               <a
-                href="http://localhost/Website-TEDITAS/"
+                href="/cam"
                 class="custom-btn btn-bg btn mt-3"
                 data-aos="fade-up"
                 data-aos-delay="100"

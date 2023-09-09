@@ -17,4 +17,8 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/cam', function () {
+    return view('cam');
+});
+
 Route::get('/home', 'HomeController@index');

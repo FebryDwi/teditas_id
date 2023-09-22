@@ -171,17 +171,9 @@
   </div>
   <script>
     var langs = [
-      ["Bahasa Indonesia", ["id-ID"]],
-      ["English", ["en-GB"]],
-      // [
-      //   "English",
-      //   ["en-AU", "Australia"],
-      //   ["en-IN", "India"],
-      //   ["en-NZ", "New Zealand"],
-      //   ["en-ZA", "South Africa"],
-      //   ["en-GB", "United Kingdom"],
-      //   ["en-US", "United States"],
-      // ],
+      ["-", ["-"]],
+      ["Bahasa Indonesia", ["id-ID"]]
+
     ];
 
     for (var i = 0; i < langs.length; i++) {

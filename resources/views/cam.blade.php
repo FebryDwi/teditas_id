@@ -369,7 +369,6 @@
       copy_info.style.display = "none";
       email_info.style.display = "none";
     }
-    
   </script>
 
 </div>

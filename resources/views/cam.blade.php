@@ -369,28 +369,7 @@
       copy_info.style.display = "none";
       email_info.style.display = "none";
     }
-    var voice = speechSynthesis.getVoices();
-speechSynthesis.getVoices().forEach(function(voice) {
-  console.log(voice.name, voice.default ? voice.default
-    :
-    '');
-});
-
-msg.pitch = 1.1;
-msg.volume = 1;
-msg.rate = 0.65;
-msg.voice = voices[5];
-msg.lang = 'en-US';
-
-
-window.speechSynthesis.speak(msg);
-window.location.reload();
-
-
-document.addEventListener('keyup', function(e) {
-  if (e.keyCode == 82)
-    window.location.reload();
-})
+    
   </script>
 
 </div>

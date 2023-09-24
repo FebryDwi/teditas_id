@@ -147,6 +147,9 @@
       <a href="#" class="fa fa-microphone"> Mulai</a>
     </button>
   </div>
+  {{-- <div>
+    <button onclick="location.reload();">Refresh</button>
+  </div> --}}
   <div id="results">
     <span id="final_span" class="final"></span>
     <span id="interim_span" class="interim"></span>
@@ -154,14 +157,14 @@
   </div>
 
   <div class="center">
-    <!--<div class="sidebyside">
+    <div class="sidebyside">
       <button id="email_button" class="button" onclick="emailButton()">
         Create Email</button>
       <div id="email_info" class="info">
         Text sent to default email application.<br>
         (See chrome://settings/handlers to change.)
       </div>
-    </div>-->
+    </div>
     <p></p>
     <div id="div_language">
       <select id="select_language" onchange="updateCountry()"></select>
@@ -259,6 +262,7 @@
         }
       };
 
+      var latestTranscript = "";
       recognition.onresult = function (event) {
         var interim_transcript = "";
         for (var i = event.resultIndex; i < event.results.length; ++i) {
@@ -269,13 +273,39 @@
           }
         }
         final_transcript = capitalize(final_transcript);
+
+        var newTranscript = final_transcript.slice(latestTranscript.length);
+  latestTranscript = final_transcript;
+
         final_span.innerHTML = linebreak(final_transcript);
         interim_span.innerHTML = linebreak(interim_transcript);
         if (final_transcript || interim_transcript) {
           showButtons("inline-block");
         }
       };
-    }
+          
+          // Function to reset the transcript and restart recognition
+function resetTranscriptAndRestart() {
+  
+  interim_span.innerHTML = ""; // Append the new transcript
+
+  // Clear the final transcript
+  final_transcript = "";
+  final_span.innerHTML = "";
+
+  showButtons("none"); // Hide the buttons
+
+  // Restart the recognition process
+  recognition.start();
+  ignore_onend = false;
+  start_img.src = "mic-slash.gif";
+  showInfo("info_allow");
+}
+
+// Refresh the transcript every 6 seconds
+setInterval(resetTranscriptAndRestart, 12000); // Refresh the transcript every 6 seconds
+        }
+
 
     function upgrade() {
       start_button.style.visibility = "hidden";
@@ -369,6 +399,7 @@
       copy_info.style.display = "none";
       email_info.style.display = "none";
     }
+    
   </script>
 
 </div>

@@ -104,7 +104,7 @@
                 Solusi Alternatif Dalam Metode Pembelajaran
               </h2>
               <p class="mb-0" data-aos="fade-up">
-                <a href="index.html">TEDITAS (Teman Disabilitas)</a> Penerjemah
+                TEDITAS (Teman Disabilitas) Penerjemah
                 suara kedalam bentuk teks (Speech To Text) memungkinkan untuk
                 mengonversi kata-kata yang diucapkan menjadi teks. Dapat
                 meningkatkan partisipasi peserta didik di lingkungan pendidikan
@@ -137,8 +137,7 @@
             <h2 class="mb-5 text-center" data-aos="fade-up">
               Belajar bahasa isyarat bukan hanya tentang kata-kata,
               <strong
-                >tetapi juga tentang memahami dan menghormati keberagaman dalam
-                berkomunikasi.</strong
+                >tetapi juga tentang memahami dan menghargai keberagaman dalam berkomunikasi.</strong
               >
             </h2>
 
@@ -300,7 +299,9 @@
         <div class="row">
           <div class="col-lg-5 mx-lg-auto col-md-8 col-10">
             <h1 class="text-white" data-aos="fade-up" data-aos-delay="100">
-              Be Creative & Professional
+              PKM Karsa Cipta
+              Tahun 2023 <br>
+              STIKI Malang
             </h1>
           </div>
 
@@ -311,6 +312,11 @@
           >
             <h4 class="my-4">Informasi</h4>
 
+            {{-- fa fa-phone mr-2 footer-icon --}}
+            <p class="mb-1">
+              <i class="fa fa-home mr-2 footer-icon"></i>
+              <a href="https://www.stiki.ac.id/" target="_blank">STIKI Malang </a>
+            </p>
             <p class="mb-1">
               <i class="fa fa-phone mr-2 footer-icon"></i>
               (0341) 560823
@@ -319,7 +325,8 @@
             <p>
               <a href="#">
                 <i class="fa fa-instagram mr-2 footer-icon"></i>
-                @teditas_id
+                <a href="https://www.instagram.com/teditas_id/" target="_blank">@teditas_id </a>
+                
               </a>
             </p>
           </div>

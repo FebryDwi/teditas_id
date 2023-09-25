@@ -104,12 +104,28 @@
       float: right;
       margin-top: 5%;
       margin-right: 5%;
-
     }
-  
+    .container{
+      text-align: center;
+    }
+    .container img{
+      display: inline-block;
+      margin: 10px;
+    }
+
 </style>
 
 <h1 class="center" id="headline" style="color: #04996c; padding-top: 2%;"> Speech To Text</h1>
+<div class="container">
+  <img c src="Images/tut_wuri_handayani.png" alt="" style="height:50px">
+  <img src="Images/PKM23.png" alt="" style="height:50px">
+  <img src="Images/merdeka_belajar.png" alt="" style="height:50px">
+  <img src="Images/kampus_merdeka.png" alt="" style="height:50px">
+  <img src="Images/simbelmawa.png" alt="" style="height:50px">
+  <img src="Images/logo_kampus.png" alt="" style="height:60px">
+
+</div>
+
 <div class="kiri">
   <div id="info">
     <p id="info_start">Klik pada icon "mikrofon" untuk mulai berbicara test</p>
@@ -284,7 +300,7 @@
         }
       };
           
-          // Function to reset the transcript and restart recognition
+          // Reset Transcript and restart recognition
 function resetTranscriptAndRestart() {
   
   interim_span.innerHTML = ""; // Append the new transcript

@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="css/owl.carousel.min.css" />
 <link rel="stylesheet" href="css/owl.theme.default.min.css" />
 
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 <!-- SCRIPT SPEECH TO TEXT -->
 
 <style>
@@ -89,22 +93,19 @@
     padding: 0;
 
     }
+    /* box kiri */
     div.kiri {
-      width: 50%;
-      float: left;
-      margin-left: 4%;
-      margin-top: 10%;
-      padding-left: 5%; 
+      width: 100%;
+   
       /* "padding = ukuran kotak" */
     }
+    /* box right */
     div.kanan {
-      width: auto;
+      width: 100%;
       border-style: solid;
       border-color: #04996c;
-      float: right;
-      margin-top: 5%;
-      margin-right: 5%;
     }
+
     .container{
       text-align: center;
     }
@@ -114,344 +115,376 @@
     }
 
 </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="http://127.0.0.1:8000/"> TEDITAS. </a>
 
-<h1 class="center" id="headline" style="color: #04996c; padding-top: 2%;"> Speech To Text</h1>
-<div class="container">
-  <img c src="Images/tut_wuri_handayani.png" alt="" style="height:50px">
-  <img src="Images/PKM23.png" alt="" style="height:50px">
-  <img src="Images/merdeka_belajar.png" alt="" style="height:50px">
-  <img src="Images/kampus_merdeka.png" alt="" style="height:50px">
-  <img src="Images/simbelmawa.png" alt="" style="height:50px">
-  <img src="Images/logo_kampus.png" alt="" style="height:60px">
-
-</div>
-
-<div class="kiri">
-  <div id="info">
-    <p id="info_start">Klik pada icon "mikrofon" untuk mulai berbicara test</p>
-    <p id="info_speak_now">Bicara Sekarang.</p>
-    <p id="info_no_speech">
-      Tidak ada speech terdeteksi.
-      <a
-        href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892"
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
       >
-        Klik Disini Untuk Melihat Bantuan</a
-      >.
-    </p>
-    <p id="info_no_microphone" style="display: none">
-      No microphone was found. Ensure that a microphone is installed and that
-      <a
-        href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892"
-      >
-        microphone settings</a
-      >
-      are configured correctly.
-    </p>
-    <p id="info_allow">Klik Tombol "Allow" untuk mengaktifkan microphone Anda.</p>
-    <p id="info_denied">Permintaan Akses Microphone di Tolak</p>
-    <p id="info_blocked">
-      Permission to use microphone is blocked. To change, go to
-      chrome://settings/contentExceptions#media-stream
-    </p>
-    <p id="info_upgrade">
-      Web Speech API is not supported by this browser. Upgrade to
-      <a href="//www.google.com/chrome">Chrome</a> version 25 or later.
-    </p>
-  </div>
-  <div class="right">
-    <button id="start_button" onclick="startButton(event)">
-      <a href="#" class="fa fa-microphone"> Mulai</a>
-    </button>
-  </div>
-  {{-- <div>
-    <button onclick="location.reload();">Refresh</button>
-  </div> --}}
-  <div id="results">
-    <span id="final_span" class="final"></span>
-    <span id="interim_span" class="interim"></span>
-    <p></p>
-  </div>
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  <div class="center">
-    <div class="sidebyside">
-      <button id="email_button" class="button" onclick="emailButton()">
-        Create Email</button>
-      <div id="email_info" class="info">
-        Text sent to default email application.<br>
-        (See chrome://settings/handlers to change.)
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a
+              href="http://127.0.0.1:8000/"
+              class="nav-link contact"
+              >Kembali</a
+            >
+          </li>
+        </ul>
       </div>
     </div>
-    <p></p>
-    <div id="div_language">
-      <select id="select_language" onchange="updateCountry()"></select>
-      &nbsp;&nbsp;
-      <select id="select_dialect"></select>
-    </div>
+  </nav>
+<div class="container">
+  <div>
+    <img c src="Images/tut_wuri_handayani.png" alt="" style="height:50px">
+    <img src="Images/PKM23.png" alt="" style="height:50px">
+    <img src="Images/merdeka_belajar.png" alt="" style="height:50px">
+    <img src="Images/kampus_merdeka.png" alt="" style="height:50px">
+    <img src="Images/simbelmawa.png" alt="" style="height:50px">
+    <img src="Images/logo_kampus.png" alt="" style="height:60px">
   </div>
-  <script>
-    var langs = [
-      ["-", ["-"]],
-      ["Bahasa Indonesia", ["id-ID"]]
+</div>
 
-    ];
-
-    for (var i = 0; i < langs.length; i++) {
-      select_language.options[i] = new Option(langs[i][0], i);
-    }
-    select_language.selectedIndex = 1;
-    updateCountry();
-    select_dialect.selectedIndex = 1;
-    showInfo("info_start");
-
-    function updateCountry() {
-      for (var i = select_dialect.options.length - 1; i >= 0; i--) {
-        select_dialect.remove(i);
-      }
-      var list = langs[select_language.selectedIndex];
-      for (var i = 1; i < list.length; i++) {
-        select_dialect.options.add(new Option(list[i][1], list[i][0]));
-      }
-      select_dialect.style.visibility =
-        list[1].length == 1 ? "hidden" : "visible";
-    }
-
-    var create_email = false;
-    var final_transcript = "";
-    var recognizing = false;
-    var ignore_onend;
-    var start_timestamp;
-    if (!("webkitSpeechRecognition" in window)) {
-      upgrade();
-    } else {
-      start_button.style.display = "inline-block";
-      var recognition = new webkitSpeechRecognition();
-      recognition.continuous = true;
-      recognition.interimResults = true;
-
-      recognition.onstart = function () {
-        recognizing = true;
-        showInfo("info_speak_now");
-        start_img.src = "mic-animate.gif";
-      };
-
-      recognition.onerror = function (event) {
-        if (event.error == "no-speech") {
-          start_img.src = "mic.gif";
-          showInfo("info_no_speech");
-          ignore_onend = true;
-        }
-        if (event.error == "audio-capture") {
-          start_img.src = "mic.gif";
-          showInfo("info_no_microphone");
-          ignore_onend = true;
-        }
-        if (event.error == "not-allowed") {
-          if (event.timeStamp - start_timestamp < 100) {
-            showInfo("info_blocked");
-          } else {
-            showInfo("info_denied");
-          }
-          ignore_onend = true;
-        }
-      };
-
-      recognition.onend = function () {
-        recognizing = false;
-        if (ignore_onend) {
-          return;
-        }
-        start_img.src = "mic.gif";
-        if (!final_transcript) {
-          showInfo("info_start");
-          return;
-        }
-        showInfo("");
-        if (window.getSelection) {
-          window.getSelection().removeAllRanges();
-          var range = document.createRange();
-          range.selectNode(document.getElementById("final_span"));
-          window.getSelection().addRange(range);
-        }
-        if (create_email) {
-          create_email = false;
-          createEmail();
-        }
-      };
-
-      var latestTranscript = "";
-      recognition.onresult = function (event) {
-        var interim_transcript = "";
-        for (var i = event.resultIndex; i < event.results.length; ++i) {
-          if (event.results[i].isFinal) {
-            final_transcript += event.results[i][0].transcript;
-          } else {
-            interim_transcript += event.results[i][0].transcript;
-          }
-        }
-        final_transcript = capitalize(final_transcript);
-
-        var newTranscript = final_transcript.slice(latestTranscript.length);
-  latestTranscript = final_transcript;
-
-        final_span.innerHTML = linebreak(final_transcript);
-        interim_span.innerHTML = linebreak(interim_transcript);
-        if (final_transcript || interim_transcript) {
-          showButtons("inline-block");
-        }
-      };
-          
-          // Reset Transcript and restart recognition
-function resetTranscriptAndRestart() {
-  
-  interim_span.innerHTML = ""; // Append the new transcript
-
-  // Clear the final transcript
-  final_transcript = "";
-  final_span.innerHTML = "";
-
-  showButtons("none"); // Hide the buttons
-
-  // Restart the recognition process
-  recognition.start();
-  ignore_onend = false;
-  start_img.src = "mic-slash.gif";
-  showInfo("info_allow");
-}
-
-// Refresh the transcript every 6 seconds
-setInterval(resetTranscriptAndRestart, 12000); // Refresh the transcript every 6 seconds
-        }
+<div class="row px-5">
+  <div class="col-md-6">
+    <div class="kanan">
 
 
-    function upgrade() {
-      start_button.style.visibility = "hidden";
-      showInfo("info_upgrade");
-    }
-
-    var two_line = /\n\n/g;
-    var one_line = /\n/g;
-    function linebreak(s) {
-      return s.replace(two_line, "<p></p>").replace(one_line, "<br>");
-    }
-
-    var first_char = /\S/;
-    function capitalize(s) {
-      return s.replace(first_char, function (m) {
-        return m.toUpperCase();
+      <!-- MAIN CSS -->
+      <link rel="stylesheet" href="css/templatemo-digital-trend.css" />
+      <!-- camera--> <script type="text/javascript" src="js/webcam-pakai.js"></script> 
+      <!-- camera--> <script language="JavaScript">
+    
+      // SCRIPT CAMERA DI BAWAH INI
+      function ShowCam(){
+    
+          Webcam.set({
+              width: 640,
+              height: 480
+              
       });
-    }
-
-    function createEmail() {
-      var n = final_transcript.indexOf("\n");
-      if (n < 0 || n >= 80) {
-        n = 40 + final_transcript.substring(40).indexOf(" ");
+      Webcam.attach('#my_camera');
       }
-      var subject = encodeURI(final_transcript.substring(0, n));
-      var body = encodeURI(final_transcript.substring(n + 1));
-      window.location.href = "mailto:?subject=" + subject + "&body=" + body;
-    }
-
-    function copyButton() {
-      if (recognizing) {
-        recognizing = false;
-        recognition.stop();
-      }
-      copy_button.style.display = "none";
-      copy_info.style.display = "inline-block";
-      showInfo("");
-    }
-
-    function emailButton() {
-      if (recognizing) {
-        create_email = true;
-        recognizing = false;
-        recognition.stop();
-      } else {
-        createEmail();
-      }
-      email_button.style.display = "none";
-      email_info.style.display = "inline-block";
-      showInfo("");
-    }
-
-    function startButton(event) {
-      if (recognizing) {
-        recognition.stop();
-        return;
-      }
+    
+      window.onload= ShowCam;
+      </script>
+      </head>
+          <div class="posisi" id="Cam">
+              <div id="my_camera"></div><form>
+          </div>
+      </div>
+    
+      <!-- SCRIPT CAMERA DI ATAS INI -->
+    </div>
+  <div class="col-md-6">
+    <div class="kiri">
+      <div id="info">
+        <p id="info_start">Klik pada icon "mikrofon" untuk mulai berbicara test</p>
+        <p id="info_speak_now">Bicara Sekarang.</p>
+        <p id="info_no_speech">
+          Tidak ada speech terdeteksi.
+          <a
+            href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892"
+          >
+            Klik Disini Untuk Melihat Bantuan</a
+          >.
+        </p>
+        <p id="info_no_microphone" style="display: none">
+          No microphone was found. Ensure that a microphone is installed and that
+          <a
+            href="//support.google.com/chrome/bin/answer.py?hl=en&amp;answer=1407892"
+          >
+            microphone settings</a
+          >
+          are configured correctly.
+        </p>
+        <p id="info_allow">Klik Tombol "Allow" untuk mengaktifkan microphone Anda.</p>
+        <p id="info_denied">Permintaan Akses Microphone di Tolak</p>
+        <p id="info_blocked">
+          Permission to use microphone is blocked. To change, go to
+          chrome://settings/contentExceptions#media-stream
+        </p>
+        <p id="info_upgrade">
+          Web Speech API is not supported by this browser. Upgrade to
+          <a href="//www.google.com/chrome">Chrome</a> version 25 or later.
+        </p>
+      </div>
+      <div class="right">
+        <button id="start_button" onclick="startButton(event)">
+          <a href="#" class="fa fa-microphone"> Mulai</a>
+        </button>
+      </div>
+      {{-- <div>
+        <button onclick="location.reload();">Refresh</button>
+      </div> --}}
+      <div id="results">
+        <span id="final_span" class="final"></span>
+        <span id="interim_span" class="interim"></span>
+        <p></p>
+      </div>
+    
+      <div class="center">
+        <div class="sidebyside">
+          <button id="email_button" class="button" onclick="emailButton()">
+            Create Email</button>
+          <div id="email_info" class="info">
+            Text sent to default email application.<br>
+            (See chrome://settings/handlers to change.)
+          </div>
+        </div>
+        <p></p>
+        <div id="div_language">
+          <select id="select_language" onchange="updateCountry()"></select>
+          &nbsp;&nbsp;
+          <select id="select_dialect"></select>
+        </div>
+      </div>
+      <script>
+        var langs = [
+          ["-", ["-"]],
+          ["Bahasa Indonesia", ["id-ID"]]
+    
+        ];
+    
+        for (var i = 0; i < langs.length; i++) {
+          select_language.options[i] = new Option(langs[i][0], i);
+        }
+        select_language.selectedIndex = 1;
+        updateCountry();
+        select_dialect.selectedIndex = 1;
+        showInfo("info_start");
+    
+        function updateCountry() {
+          for (var i = select_dialect.options.length - 1; i >= 0; i--) {
+            select_dialect.remove(i);
+          }
+          var list = langs[select_language.selectedIndex];
+          for (var i = 1; i < list.length; i++) {
+            select_dialect.options.add(new Option(list[i][1], list[i][0]));
+          }
+          select_dialect.style.visibility =
+            list[1].length == 1 ? "hidden" : "visible";
+        }
+    
+        var create_email = false;
+        var final_transcript = "";
+        var recognizing = false;
+        var ignore_onend;
+        var start_timestamp;
+        if (!("webkitSpeechRecognition" in window)) {
+          upgrade();
+        } else {
+          start_button.style.display = "inline-block";
+          var recognition = new webkitSpeechRecognition();
+          recognition.continuous = true;
+          recognition.interimResults = true;
+    
+          recognition.onstart = function () {
+            recognizing = true;
+            showInfo("info_speak_now");
+            start_img.src = "mic-animate.gif";
+          };
+    
+          recognition.onerror = function (event) {
+            if (event.error == "no-speech") {
+              start_img.src = "mic.gif";
+              showInfo("info_no_speech");
+              ignore_onend = true;
+            }
+            if (event.error == "audio-capture") {
+              start_img.src = "mic.gif";
+              showInfo("info_no_microphone");
+              ignore_onend = true;
+            }
+            if (event.error == "not-allowed") {
+              if (event.timeStamp - start_timestamp < 100) {
+                showInfo("info_blocked");
+              } else {
+                showInfo("info_denied");
+              }
+              ignore_onend = true;
+            }
+          };
+    
+          recognition.onend = function () {
+            recognizing = false;
+            if (ignore_onend) {
+              return;
+            }
+            start_img.src = "mic.gif";
+            if (!final_transcript) {
+              showInfo("info_start");
+              return;
+            }
+            showInfo("");
+            if (window.getSelection) {
+              window.getSelection().removeAllRanges();
+              var range = document.createRange();
+              range.selectNode(document.getElementById("final_span"));
+              window.getSelection().addRange(range);
+            }
+            if (create_email) {
+              create_email = false;
+              createEmail();
+            }
+          };
+    
+          var latestTranscript = "";
+          recognition.onresult = function (event) {
+            var interim_transcript = "";
+            for (var i = event.resultIndex; i < event.results.length; ++i) {
+              if (event.results[i].isFinal) {
+                final_transcript += event.results[i][0].transcript;
+              } else {
+                interim_transcript += event.results[i][0].transcript;
+              }
+            }
+            final_transcript = capitalize(final_transcript);
+    
+            var newTranscript = final_transcript.slice(latestTranscript.length);
+      latestTranscript = final_transcript;
+    
+            final_span.innerHTML = linebreak(final_transcript);
+            interim_span.innerHTML = linebreak(interim_transcript);
+            if (final_transcript || interim_transcript) {
+              showButtons("inline-block");
+            }
+          };
+              
+              // Reset Transcript and restart recognition
+    function resetTranscriptAndRestart() {
+      
+      interim_span.innerHTML = ""; // Append the new transcript
+    
+      // Clear the final transcript
       final_transcript = "";
-      recognition.lang = select_dialect.value;
+      final_span.innerHTML = "";
+    
+      showButtons("none"); // Hide the buttons
+    
+      // Restart the recognition process
       recognition.start();
       ignore_onend = false;
-      final_span.innerHTML = "";
-      interim_span.innerHTML = "";
       start_img.src = "mic-slash.gif";
       showInfo("info_allow");
-      showButtons("none");
-      start_timestamp = event.timeStamp;
-    }
-
-    function showInfo(s) {
-      if (s) {
-        for (var child = info.firstChild; child; child = child.nextSibling) {
-          if (child.style) {
-            child.style.display = child.id == s ? "inline" : "none";
-          }
-        }
-        info.style.visibility = "visible";
-      } else {
-        info.style.visibility = "hidden";
-      }
-    }
-
-    var current_style;
-    function showButtons(style) {
-      if (style == current_style) {
-        return;
-      }
-      current_style = style;
-      copy_button.style.display = style;
-      email_button.style.display = style;
-      copy_info.style.display = "none";
-      email_info.style.display = "none";
     }
     
-  </script>
-
-</div>
-<div class="kanan">
-
-
-<!-- MAIN CSS -->
-<link rel="stylesheet" href="css/templatemo-digital-trend.css" />
-<!-- camera--> <script type="text/javascript" src="js/webcam-pakai.js"></script> 
-<!-- camera--> <script language="JavaScript">
-
-// SCRIPT CAMERA DI BAWAH INI
-function ShowCam(){
-
-    Webcam.set({
-        width: 640,
-        height: 480
-});
-Webcam.attach('#my_camera');
-}
-
-window.onload= ShowCam;
-</script>
-
-<!-- <style>
-    .posisi {
-      position: relative;
-      left: 250px;
-      top: 150px;
-    }
-</style>
-</head> -->
-    <div class="posisi" id="Cam">
-        <div id="my_camera"></div><form>
+    // Refresh the transcript every 6 seconds
+    setInterval(resetTranscriptAndRestart, 12000); // Refresh the transcript every 6 seconds
+            }
+    
+    
+        function upgrade() {
+          start_button.style.visibility = "hidden";
+          showInfo("info_upgrade");
+        }
+    
+        var two_line = /\n\n/g;
+        var one_line = /\n/g;
+        function linebreak(s) {
+          return s.replace(two_line, "<p></p>").replace(one_line, "<br>");
+        }
+    
+        var first_char = /\S/;
+        function capitalize(s) {
+          return s.replace(first_char, function (m) {
+            return m.toUpperCase();
+          });
+        }
+    
+        function createEmail() {
+          var n = final_transcript.indexOf("\n");
+          if (n < 0 || n >= 80) {
+            n = 40 + final_transcript.substring(40).indexOf(" ");
+          }
+          var subject = encodeURI(final_transcript.substring(0, n));
+          var body = encodeURI(final_transcript.substring(n + 1));
+          window.location.href = "mailto:?subject=" + subject + "&body=" + body;
+        }
+    
+        function copyButton() {
+          if (recognizing) {
+            recognizing = false;
+            recognition.stop();
+          }
+          copy_button.style.display = "none";
+          copy_info.style.display = "inline-block";
+          showInfo("");
+        }
+    
+        function emailButton() {
+          if (recognizing) {
+            create_email = true;
+            recognizing = false;
+            recognition.stop();
+          } else {
+            createEmail();
+          }
+          email_button.style.display = "none";
+          email_info.style.display = "inline-block";
+          showInfo("");
+        }
+    
+        function startButton(event) {
+          if (recognizing) {
+            recognition.stop();
+            return;
+          }
+          final_transcript = "";
+          recognition.lang = select_dialect.value;
+          recognition.start();
+          ignore_onend = false;
+          final_span.innerHTML = "";
+          interim_span.innerHTML = "";
+          start_img.src = "mic-slash.gif";
+          showInfo("info_allow");
+          showButtons("none");
+          start_timestamp = event.timeStamp;
+        }
+    
+        function showInfo(s) {
+          if (s) {
+            for (var child = info.firstChild; child; child = child.nextSibling) {
+              if (child.style) {
+                child.style.display = child.id == s ? "inline" : "none";
+              }
+            }
+            info.style.visibility = "visible";
+          } else {
+            info.style.visibility = "hidden";
+          }
+        }
+    
+        var current_style;
+        function showButtons(style) {
+          if (style == current_style) {
+            return;
+          }
+          current_style = style;
+          copy_button.style.display = style;
+          email_button.style.display = style;
+          copy_info.style.display = "none";
+          email_info.style.display = "none";
+        }
+        
+      </script>
+    
     </div>
-</div>
-
-<!-- SCRIPT CAMERA DI ATAS INI -->
   </div>
+  </div>
+</div>
+</body>
+</html>
+

@@ -26,6 +26,13 @@
   a:visited {
     color: #000;
   }
+  /* camera config */
+  .posisi {
+    width: 100%
+  }
+  #my_camera {
+    width: 100%
+  }
   .button {
     background: -webkit-linear-gradient(top, #008dfd 0, #0370ea 100%);
     border: 1px solid #076bd2;
@@ -75,17 +82,17 @@
   }
   #info {
     font-size: 20px;
-    text-align: center;
+    /* text-align: center; */
     color: #777;
     visibility: hidden;
   }
   #results {
-    font-size: 14px;
+    font-size: 22px;
     font-weight: bold;
     border: 1px solid #ddd;
     padding: 15px;
     text-align: left;
-    min-height: 150px;
+    height: 300px;
   }
   #start_button {
     border: 0;
@@ -102,8 +109,6 @@
     /* box right */
     div.kanan {
       width: 100%;
-      border-style: solid;
-      border-color: #04996c;
     }
 
     .container{
@@ -157,38 +162,8 @@
   </div>
 </div>
 
-<div class="row px-5">
-  <div class="col-md-6">
-    <div class="kanan">
-
-
-      <!-- MAIN CSS -->
-      <link rel="stylesheet" href="css/templatemo-digital-trend.css" />
-      <!-- camera--> <script type="text/javascript" src="js/webcam-pakai.js"></script> 
-      <!-- camera--> <script language="JavaScript">
-    
-      // SCRIPT CAMERA DI BAWAH INI
-      function ShowCam(){
-    
-          Webcam.set({
-              width: 640,
-              height: 480
-              
-      });
-      Webcam.attach('#my_camera');
-      }
-    
-      window.onload= ShowCam;
-      </script>
-      </head>
-          <div class="posisi" id="Cam">
-              <div id="my_camera"></div><form>
-          </div>
-      </div>
-    
-      <!-- SCRIPT CAMERA DI ATAS INI -->
-    </div>
-  <div class="col-md-6">
+<div class="row px-5 d-flex mt-4" style="background-color: #000000">
+  <div class="col-sm-6 my-3 order-1 py-5"  style="background-color: #ffffff">
     <div class="kiri">
       <div id="info">
         <p id="info_start">Klik pada icon "mikrofon" untuk mulai berbicara test</p>
@@ -236,14 +211,14 @@
       </div>
     
       <div class="center">
-        <div class="sidebyside">
+        {{-- <div class="sidebyside">
           <button id="email_button" class="button" onclick="emailButton()">
             Create Email</button>
           <div id="email_info" class="info">
             Text sent to default email application.<br>
             (See chrome://settings/handlers to change.)
           </div>
-        </div>
+        </div> --}}
         <p></p>
         <div id="div_language">
           <select id="select_language" onchange="updateCountry()"></select>
@@ -483,8 +458,73 @@
     
     </div>
   </div>
+  <div class="col-sm-6 ">
+    <div class="kanan">
+
+
+      <!-- MAIN CSS -->
+      <link rel="stylesheet" href="css/templatemo-digital-trend.css" />
+      <!-- camera--> <script type="text/javascript" src="js/webcam-pakai.js"></script> 
+      <!-- camera--> <script language="JavaScript">
+    
+      // SCRIPT CAMERA DI BAWAH INI
+      function ShowCam(){
+    
+          Webcam.set({
+              width: 788,
+              height: 470
+              
+      });
+    
+      Webcam.attach('#my_camera');
+
+
+      }
+      const counterShowCame = true;
+      if (counterShowCame) {
+        window.onload= ShowCam;//jangan dihapus ini ilmu penting
+      } 
+      //window.onload= ShowCam;//jangan dihapus ini ilmu penting
+      </script>
+      </head>
+          <div class="posisi" id="Cam">
+              <div id="my_camera"><div><form>
+          </div>
+          
+      </div>
+      {{-- BUTTON CAME --}}
+      {{-- <p class="mb-1" onclick="hideCame()">
+      <i class="fa fa-camera" style="color: #04996C"></i> --}}
+    </p>
+      <!-- SCRIPT CAMERA DI ATAS INI -->
+    </div>
   </div>
+
+
 </div>
+<script>
+  
+  // function ShowCam() {
+  //   Webcam.set({
+  //       width: 788,
+  //       height: 470
+        
+  //   });
+  //   Webcam.attach('#my_camera');
+
+  // }
+
+
+  // function hideCame() {
+  //   counterShowCame = false;
+
+  //   if ()
+  //   Webcam.reset();
+
+  // }
+
+
+</script>
 </body>
 </html>
 

@@ -538,6 +538,7 @@
                             force_flash: false,
                             flip_horiz: true,
                             fps: 45
+
                         });
 
                         Webcam.attach('#my_camera');

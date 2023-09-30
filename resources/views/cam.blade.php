@@ -55,11 +55,6 @@
             letter-spacing: normal;
         }
 
-        .center {
-            padding: 10px;
-            text-align: center;
-        }
-
         .final {
             color: black;
             padding-right: 3px;
@@ -78,8 +73,16 @@
 
         .right {
             float: right;
-            padding-right: 2%;
-            padding-top: 1%;
+            margin-top: 2%;
+            margin-right: 35%;
+            /* padding-right: 5%; */
+            font-size: 20px;
+        }
+
+        .center {
+            padding: 10px;
+            text-align: center;
+            margin-left: 20%;
         }
 
         .sidebyside {
@@ -96,8 +99,8 @@
         }
 
         #info {
-            font-size: 20px;
-            /* text-align: center; */
+            font-size: 30px;
+            text-align: center;
             color: #777;
             visibility: hidden;
         }
@@ -105,14 +108,15 @@
         #results {
             font-size: 30px;
             font-weight: bold;
-            border: 1px solid #ddd;
+            border: 2px solid #ddd;
             padding: 15px;
             text-align: left;
-            min-height: 150px;
-            max-height: 300px;
-            height: 560px;
+            height: 80%;
             overflow-y: auto;
             overflow-x: hidden;
+            /* min-height: 150px;
+            max-height: 300px; */
+            width: 99%;
         }
 
         #start_button {
@@ -124,9 +128,17 @@
 
         /* box kiri */
         div.kiri {
+            background-color: #FFFFFF;
             width: 100%;
-
+            height: 96%;
+            float: left;
+            padding-left: 1%;
+            border: 5px solid #057a5f;
+            border-radius: 50px;
+            /* rounded border
             /* "padding = ukuran kotak" */
+            /* margin-left: 1%; */
+            /* margin-top: 1%; */
         }
 
         /* box right */
@@ -154,7 +166,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg mt-4">
         <div class="container">
             <a class="navbar-brand" href="http://teditas.id/"> TEDITAS. </a>
 
@@ -183,10 +195,11 @@
     </nav>
 
     <div class="row px-5 d-flex mt-4" style="background-color: #000000">
-        <div class="col-sm-6 my-3 order-1 py-5" style="background-color: #ffffff">
+        <div class="col-sm-5 my-3 order-1 py-4">
             <div class="kiri">
                 <div id="info">
-                    <p id="info_start">Klik pada icon "mikrofon" untuk mulai berbicara test</p>
+
+                    <p id="info_start">Klik pada icon "mikrofon" untuk mulai berbicara</p>
                     <p id="info_speak_now">Bicara Sekarang.</p>
                     <p id="info_no_speech">
                         Tidak ada speech terdeteksi.
@@ -209,11 +222,9 @@
                         Web Speech API is not supported by this browser. Upgrade to
                         <a href="//www.google.com/chrome">Chrome</a> version 25 or later.
                     </p>
-                </div>
-                <div class="right">
-                    <button id="start_button" onclick="startButton(event)">
-                        <a href="#" class="fa fa-microphone">Mulai</a>
-                    </button>
+
+
+
                 </div>
                 {{-- <div>
         <button onclick="location.reload();">Refresh</button>
@@ -225,6 +236,11 @@
                 </div>
 
                 <div class="center">
+                    <div class="right">
+                        <button id="start_button" onclick="startButton(event)">
+                            <a href="#" class="fa fa-microphone"> Mulai</a>
+                        </button>
+                    </div>
 
                     <script>
                         var count = 0;
@@ -499,7 +515,7 @@
 
             </div>
         </div>
-        <div class="col-sm-6 ">
+        <div class="col-sm-7 ">
             <div class="kanan">
 
 
@@ -513,9 +529,15 @@
                     function ShowCam() {
 
                         Webcam.set({
-                            width: 668,
-                            height: 520
-
+                            width: 1050,
+                            height: 700,
+                            //   dest_width: 1100,
+                            //   dest_height: 700,
+                            image_format: 'jpeg',
+                            jpeg_quality: 90,
+                            force_flash: false,
+                            flip_horiz: true,
+                            fps: 45
                         });
 
                         Webcam.attach('#my_camera');

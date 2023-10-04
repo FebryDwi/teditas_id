@@ -115,7 +115,7 @@
             overflow-y: auto;
             overflow-x: hidden;
             min-height: 150px;
-            max-height: 500px;
+            max-height: 550px;
             width: 99%;
         }
 
@@ -137,8 +137,8 @@
             border-radius: 50px;
             /* rounded border
             /* "padding = ukuran kotak" */
-            /* margin-left: 1%; */
-            /* margin-top: 1%; */
+            margin-left: 1%;
+            margin-top: 2%;
         }
 
         /* box right */
@@ -148,7 +148,7 @@
             height: 90%;
             border: 5px solid #057a5f;
             float: right;
-            margin-top: 4%;
+            margin-top: 5%;
             margin-right: 1%;
             z-index: 2;
             border-radius: 50px;
@@ -174,7 +174,7 @@
 </head>
 
 <body style="overflow-x: hidden;">
-    <nav class="navbar navbar-expand-lg mt-4">
+    <nav class="navbar navbar-expand-lg mt-3">
         <div class="container">
             <a class="navbar-brand" href="http://teditas.id/"> TEDITAS. </a>
 
@@ -202,7 +202,7 @@
         </div>
     </nav>
 
-    <div class="row px-5 d-flex mt-4" style="background-color: #000000">
+    <div class="row px-5 d-flex mt-2" style="background-color: #000000">
         <div class="col-sm-5 my-3 order-1 py-4">
             <div class="kiri">
                 <div id="info">
@@ -277,8 +277,9 @@
                 </div>
                 <script>
                     var langs = [
+                        ['English', ["en-GB"]],
                         ["Bahasa Indonesia", ["id-ID"]],
-                        ['English', ["en-GB"]]
+                        ["Bahasa Jawa", ["jv-ID"]]
 
                     ];
 

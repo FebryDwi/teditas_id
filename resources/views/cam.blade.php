@@ -145,10 +145,10 @@
         div.kanan {
             background-color: #FFFFFF;
             width: 100%;
-            height: 97%;
+            height: 90%;
             border: 5px solid #057a5f;
             float: right;
-            margin-top: 1%;
+            margin-top: 4%;
             margin-right: 1%;
             z-index: 2;
             border-radius: 50px;

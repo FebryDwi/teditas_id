@@ -176,7 +176,7 @@
 <body style="overflow-x: hidden;">
     <nav class="navbar navbar-expand-lg mt-3">
         <div class="container">
-            <a class="navbar-brand" href="http://teditas.id/"> TEDITAS. </a>
+            <a class="navbar-brand" href="http://teditas.id/" style="color: #04996C"> TEDITAS. </a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

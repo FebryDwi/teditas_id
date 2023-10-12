@@ -41,13 +41,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="#about" class="nav-link smoothScroll">Tentang</a>
+                        <a href="#about" class="nav-link smoothScroll">Penjelasan</a>
                     </li>
                     <li class="nav-item">
                         <a href="#project" class="nav-link smoothScroll">Belajar</a>
                     </li>
                     <li class="nav-item">
-                        <a href="/cam" class="nav-link contact">Mulai</a>
+                        <a href="/team" class="nav-link smoothScroll" target="_blank">Tentang Kami</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="http://teditas.id/cam" class="nav-link contact" target="_blank">Mulai</a>
                     </li>
                 </ul>
             </div>
@@ -66,7 +69,7 @@
                         </h1>
 
                         <a href="/cam" class="custom-btn btn-bg btn mt-3" data-aos="fade-up"
-                            data-aos-delay="100">Coba Sekarang!</a>
+                            data-aos-delay="100" target="_blank">Coba Sekarang!</a>
                     </div>
                 </div>
 
@@ -89,21 +92,30 @@
                             Solusi Alternatif Dalam Metode Pembelajaran
                         </h2>
                         <p class="mb-0" data-aos="fade-up">
-                            TEDITAS (Teman Disabilitas) Penerjemah
+                            <a href="/team" target="_blank">TEDITAS (Teman Disabilitas)</a> program hibah PKM Karsa Cipta Tahun 2023 yang
+                            merupakan <a href="/team" target="_blank"> tim</a> yang berasal dari Sekolah Tinggi Informatika dan
+                            Komputer Indonesia Kota Malang, beranggotakan 3 mahasiswa dari program studi Manajemen Informatika
+                            dan Teknik Informatika.
+                        </p>
+                        <br />
+                        <p class="mb-0" data-aos="fade-up">
+                            Website ini merupakan penerjemah
                             suara kedalam bentuk teks (Speech To Text) memungkinkan untuk
                             mengonversi kata-kata yang diucapkan menjadi teks. Dapat
                             meningkatkan partisipasi peserta didik di lingkungan pendidikan
                             dan membantu mereka untuk mengikuti perkembangan pembelajaran.
                         </p>
-                        <br />
+                        <br>
+
                         <p class="mb-0" data-aos="fade-up">
                             Selain itu, dengan menghilangkan hambatan dalam komunikasi,
                             peserta didik dengan disabilitas dapat merasa lebih termotivasi
                             dan percaya diri dalam mengikuti pembelajaran. Secara
                             keseluruhan, dalam penggunaannya di lingkungan pendidikan dapat
                             memberikan manfaat besar bagi peserta didik dengan disabilitas
-                            dan meningkatkan kesetaraan dalam pendidikan.
+                            dan meningkatkan kesetaraan dalam pendidikan. 
                         </p>
+
                     </div>
 
                     <div class="about-image" data-aos="fade-up" data-aos-delay="200">
@@ -253,7 +265,7 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6 col-12" data-aos="fade-up" data-aos-delay="300">
-                    <h4 class="my-4">Tentang</h4>
+                    <h4 class="my-4">Gambaran Umum</h4>
                     <p class="mb-1">
                         <!--<i class="fa fa-home mr-2 footer-icon"></i>-->
                         Program hibah PKM Tahun 2023 yang membantu mahasiswa disabilitas mengikuti pembelajaran yang
